@@ -24,16 +24,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::apiResource('/mahasiswa',MahasiswaController::class);
-// Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
-// Route::post('/mahasiswa', [MahasiswaController::class, 'store']);
-// Route::get('/mahasiswa/{id}', [MahasiswaController::class, 'show']);
-// Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
-// Route::patch('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
-// Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy']);
 
+Route::get('/dosen', [DosenController::class, 'index']);
+Route::post('/dosen', [DosenController::class, 'store']);
+Route::get('/dosen/{id}', [DosenController::class, 'show']);
+Route::put('/dosen/{id}', [DosenController::class, 'update']);
+Route::patch('/dosen/{id}', [DosenController::class, 'update']);
+Route::delete('/dosen/{id}', [DosenController::class, 'destroy']);
 
-Route::apiResource('/dosen',DosenController::class);
 Route::apiResource('/dosen-pembimbing', DosenPembimbingController::class);
 Route::apiResource('/matakuliah', MatakuliahController::class);
 Route::apiResource('/matakuliah-mahasiswa', Matakuliah_MahasiswaController::class);
