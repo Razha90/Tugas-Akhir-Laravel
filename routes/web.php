@@ -39,3 +39,14 @@ Route::get('/dosen-pembimbing', [DosenPembimbingController::class, 'index']);
 Route::get('/matakuliah', [MatakuliahController::class, 'index']);
 
 Route::get('/matakuliah-mahasiswa', [Matakuliah_MahasiswaController::class, 'index']);
+
+Route::post('/test', function (Request $request) {
+    $nama = $request->input('nama');
+    $umur = $request->input('umur');
+    $response = [
+        'nama' => $nama,
+        'umur' => $umur
+    ];
+
+    return response()->json($response, 200);
+});

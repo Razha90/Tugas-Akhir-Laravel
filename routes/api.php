@@ -45,3 +45,14 @@ Route::get('/matakuliah/{id}', [MatakuliahController::class, 'show']);
 Route::post('/matakuliah-mahasiswa', [Matakuliah_MahasiswaController::class, 'store']);
 Route::put('/matakuliah-mahasiswa/{id}', [Matakuliah_MahasiswaController::class, 'update']);
 Route::delete('/matakuliah-mahasiswa/{id}', [Matakuliah_MahasiswaController::class, 'destroy']);
+
+Route::post('/test', function (Request $request) {
+    $nama = $request->input('nama');
+    $umur = $request->input('umur');
+    $response = [
+        'nama' => $nama,
+        'umur' => $umur
+    ];
+
+    return response()->json($response, 200);
+});
