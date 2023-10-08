@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\DosenPembimbingController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\Matakuliah_MahasiswaController;
+use App\Http\Controllers\MatakuliahController;
 use Illuminate\Support\Facades\Route;
 
 /*

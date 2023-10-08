@@ -5,7 +5,6 @@ use App\Http\Controllers\DosenPembimbingController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\Matakuliah_MahasiswaController;
 use App\Http\Controllers\MatakuliahController;
-use App\Models\Matakuliah;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
