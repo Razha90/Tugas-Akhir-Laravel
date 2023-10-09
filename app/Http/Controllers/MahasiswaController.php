@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\mahasiswa;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator; 
 
@@ -55,7 +54,7 @@ class MahasiswaController extends Controller
         
     }
 
-    public function store(Request $request): \Symfony\Component\HttpFoundation\Response
+    public function store(Request $request)
     {
         if (!$this->Database()) {
             return response()->json(['message' => 'Failed to connect to the database'], 500);
