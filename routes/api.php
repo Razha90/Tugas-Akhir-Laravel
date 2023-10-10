@@ -23,11 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('v1')->group(function () {
-    Route::post('/create-mahasiswa', [MahasiswaController::class, 'store']);
-    Route::put('/update-mahasiswa/{id}', [MahasiswaController::class, 'update']);
-    Route::patch('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
-    Route::delete('/delete-mahasiswa/{id}', [DosenController::class, 'destroy']);
+    Route::post('/v1/create-mahasiswa', [MahasiswaController::class, 'store']);
+    Route::put('/v1/update-mahasiswa/{id}', [MahasiswaController::class, 'update']);
+    Route::patch('/v1/mahasiswa/{id}', [MahasiswaController::class, 'update']);
+    Route::delete('/v1/delete-mahasiswa/{id}', [DosenController::class, 'destroy']);
 
     Route::post('/dosen', [DosenController::class, 'store']);
     Route::put('/dosen/{id}', [DosenController::class, 'update']);
@@ -46,7 +45,6 @@ Route::prefix('v1')->group(function () {
     Route::post('/matakuliah-mahasiswa', [Matakuliah_MahasiswaController::class, 'store']);
     Route::put('/matakuliah-mahasiswa/{id}', [Matakuliah_MahasiswaController::class, 'update']);
     Route::delete('/matakuliah-mahasiswa/{id}', [Matakuliah_MahasiswaController::class, 'destroy']);
-});
 
 Route::post('/test', function (Request $request) {
     $nama = $request->input('nama');
