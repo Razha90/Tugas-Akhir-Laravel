@@ -30,6 +30,8 @@ Route::get('/routes', function () {
 
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 Route::get('/mahasiswa/{id}', [MahasiswaController::class, 'show']);
+    Route::post('/create-mahasiswa', [MahasiswaController::class, 'store']);
+
 
 Route::get('/dosen', [DosenController::class, 'index']);
 Route::get('/dosen/{id}', [DosenController::class, 'show']);

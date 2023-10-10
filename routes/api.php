@@ -23,14 +23,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-    Route::post('/create-mahasiswa', [MahasiswaController::class, 'store']);
-    Route::put('/update-mahasiswa/{id}', [MahasiswaController::class, 'update']);
-    Route::patch('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
-    Route::delete('/delete-mahasiswa/{id}', [DosenController::class, 'destroy']);
+    // Route::post('/create-mahasiswa', [MahasiswaController::class, 'store']);
+    // Route::put('/update-mahasiswa/{id}', [MahasiswaController::class, 'update']);
+    // // Route::patch('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
+    // Route::delete('/delete-mahasiswa/{id}', [DosenController::class, 'destroy']);
 
     Route::post('/dosen', [DosenController::class, 'store']);
     Route::put('/dosen/{id}', [DosenController::class, 'update']);
-    Route::patch('/dosen/{id}', [DosenController::class, 'update']);
+    // Route::patch('/dosen/{id}', [DosenController::class, 'update']);
     Route::delete('/dosen/{id}', [DosenController::class, 'destroy']);
 
     Route::post('/dosen-pembimbing', [DosenPembimbingController::class, 'store']);
