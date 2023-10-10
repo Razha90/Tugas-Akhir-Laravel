@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['prefix'=>'v1'],function () {
     Route::post('/create-mahasiswa', [MahasiswaController::class, 'store']);
     Route::put('/update-mahasiswa/{id}', [MahasiswaController::class, 'update']);
     Route::patch('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
@@ -45,6 +46,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::post('/matakuliah-mahasiswa', [Matakuliah_MahasiswaController::class, 'store']);
     Route::put('/matakuliah-mahasiswa/{id}', [Matakuliah_MahasiswaController::class, 'update']);
     Route::delete('/matakuliah-mahasiswa/{id}', [Matakuliah_MahasiswaController::class, 'destroy']);
+});
 
 Route::post('/test', function (Request $request) {
     $nama = $request->input('nama');
