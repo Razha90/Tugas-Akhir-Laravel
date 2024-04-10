@@ -5,6 +5,7 @@ use App\Http\Controllers\DosenPembimbingController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\Matakuliah_MahasiswaController;
 use App\Http\Controllers\MatakuliahController;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,19 +29,6 @@ Route::get('/routes', function () {
     return view('routes', ['routeCollection' => $routeCollection]);
 });
 
-Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
-Route::get('/mahasiswa/{id}', [MahasiswaController::class, 'show']);
-    Route::post('/create-mahasiswa', [MahasiswaController::class, 'store']);
-
-
-Route::get('/dosen', [DosenController::class, 'index']);
-Route::get('/dosen/{id}', [DosenController::class, 'show']);
-
-Route::get('/dosen-pembimbing', [DosenPembimbingController::class, 'index']);
-
-Route::get('/matakuliah', [MatakuliahController::class, 'index']);
-
-Route::get('/matakuliah-mahasiswa', [Matakuliah_MahasiswaController::class, 'index']);
 
 Route::post('/test', function (Request $request) {
     $nama = $request->input('nama');

@@ -23,14 +23,30 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-    // Route::post('/create-mahasiswa', [MahasiswaController::class, 'store']);
-    // Route::put('/update-mahasiswa/{id}', [MahasiswaController::class, 'update']);
-    // // Route::patch('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
-    // Route::delete('/delete-mahasiswa/{id}', [DosenController::class, 'destroy']);
+
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+Route::get('/mahasiswa/{id}', [MahasiswaController::class, 'show']);
+Route::post('/create-mahasiswa', [MahasiswaController::class, 'store']);
+
+
+Route::get('/dosen', [DosenController::class, 'index']);
+Route::get('/dosen/{id}', [DosenController::class, 'show']);
+
+Route::get('/dosen-pembimbing', [DosenPembimbingController::class, 'index']);
+
+Route::get('/matakuliah', [MatakuliahController::class, 'index']);
+
+Route::get('/matakuliah-mahasiswa', [Matakuliah_MahasiswaController::class, 'index']);
+
+
+Route::post('/create-mahasiswa', [MahasiswaController::class, 'store']);
+Route::put('/update-mahasiswa/{id}', [MahasiswaController::class, 'update']);
+Route::patch('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
+Route::delete('/delete-mahasiswa/{id}', [DosenController::class, 'destroy']);
 
     Route::post('/dosen', [DosenController::class, 'store']);
     Route::put('/dosen/{id}', [DosenController::class, 'update']);
-    // Route::patch('/dosen/{id}', [DosenController::class, 'update']);
+    Route::patch('/dosen/{id}', [DosenController::class, 'update']);
     Route::delete('/dosen/{id}', [DosenController::class, 'destroy']);
 
     Route::post('/dosen-pembimbing', [DosenPembimbingController::class, 'store']);

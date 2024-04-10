@@ -1,15 +1,44 @@
 {
     "openapi":"3.0.2",
     "info": {
-      "title":"API Poject",
-      "version":"1.0"
+      "title":"API Poject - Kampus API",
+      "version":"1.0",
+      "description":"API Kampus is project for handle API in Campus System."
     },
     "servers": [
-      {"url":"http://localhosyt:8000"}
+      {"url":"http://localhost:8000"}
+    ],
+    "tags": [
+        {
+            "name": "mahasiswa",
+            "description": "All Mahasiswa Action",
+            "externalDocs": {
+              "description": "Mahasiswa Action More",
+              "url": "http://localhost:8000"
+            }
+        },
+        {
+            "name": "dosen",
+            "description": "All Dosen Action",
+            "externalDocs": {
+              "description": "Dosen Action More",
+              "url": "http://localhost:8000"
+            }
+        },
+        {
+            "name": "matakuliah",
+            "description": "All Matakuliah Action",
+            "externalDocs": {
+              "description": "Matakuliah Action More",
+              "url": "http://localhost:8000"
+            }
+        }
+
     ],
     "paths": {
         "/api/mahasiswa": {
             "get":{
+                "tags": ["mahasiswa"],
                 "description": "Get All Data Mahasiswa",
                 "parameters": [
 
@@ -75,7 +104,8 @@
                 }
             },
             "post": {
-            "description": "Create Mahasiswa Data",
+                "tags": ["mahasiswa"],
+                "description": "Create Mahasiswa Data",
             "requestBody":{
                 "required": true,
                 "content": {
@@ -160,6 +190,7 @@
         },
         "/api/mahasiswa/{id}": {
             "get":{
+                "tags": ["mahasiswa"],
                 "description": "Get Data Mahasiswa",
                 "parameters": [
                     {
@@ -205,6 +236,7 @@
                 }                
             },
             "delete":{
+                "tags": ["mahasiswa"],
                 "description": "Delete Data",
                 "parameters": [
                     {
@@ -250,6 +282,7 @@
                 }
             },
             "put":{
+                "tags": ["mahasiswa"],
                 "description": "Update Data Mahasiswa",
                 "requestBody": {
                     "description": "Updated Mahasiswa data",
@@ -333,6 +366,7 @@
                 ]
             },
             "patch":{
+                "tags": ["mahasiswa"],
                 "description": "Update Data Mahasiswa",
                 "requestBody": {
                     "description": "Updated Mahasiswa data",
@@ -419,6 +453,7 @@
         "/api/dosen": {
             "get":{
                 "description": "Get All Data dosen",
+                "tags": ["dosen"],
                 "parameters": [
 
                     {
@@ -483,7 +518,8 @@
                 }
             },
             "post": {
-            "description": "Create dosen Data",
+                "tags": ["dosen"],
+                "description": "Create dosen Data",
             "requestBody":{
                 "required": true,
                 "content": {
@@ -568,6 +604,7 @@
         },
         "/api/dosen/{id}": {
             "get":{
+                "tags": ["dosen"],
                 "description": "Get Data dosen",
                 "parameters": [
                     {
@@ -613,6 +650,7 @@
                 }                
             },
             "delete":{
+                "tags": ["dosen"],
                 "description": "Delete Data",
                 "parameters": [
                     {
@@ -658,6 +696,7 @@
                 }
             },
             "put":{
+                "tags": ["dosen"],
                 "description": "Update Data dosen",
                 "requestBody": {
                     "description": "Updated dosen data",
@@ -741,6 +780,7 @@
                 ]
             },
             "patch":{
+                "tags": ["dosen"],
                 "description": "Update Data dosen",
                 "requestBody": {
                     "description": "Updated dosen data",
@@ -827,6 +867,7 @@
         "/api/dosen-pembimbing": {
             "description":"Take Data Dosen be Lecture from Mahasiswa",
             "get":{
+                "tags": ["dosen"],
                 "description": "Get All Data Dosen",
                 "parameters": [
 
@@ -901,6 +942,7 @@
                 }
             },
             "post":{
+                "tags": ["dosen"],
                 "description": "Update Table Dosen Pembimbing",
                 "requestBody":{
                     "required": true,
@@ -971,6 +1013,7 @@
                         "description": "ID of the dosen"
                     }
                 ],
+                "tags": ["dosen"],
                 "description": "Delete Data From Dosen Pembimbing",
                 "responses": {
                     "204":{
@@ -989,6 +1032,7 @@
                 }
             },
             "put":{
+                "tags": ["dosen"],
                 "requestBody":{
                     "required": true,
                     "content": {
@@ -1066,6 +1110,7 @@
         "/api/matakuliah": {
             "get":{
                 "description": "Get All Data Matakuliah",
+                "tags": ["matakuliah"],
                 "parameters": [
 
                     {
@@ -1122,6 +1167,7 @@
             },
             "post": {
             "description": "Create Matakuliah Data",
+            "tags": ["matakuliah"],
             "requestBody":{
                 "required": true,
                 "content": {
@@ -1196,7 +1242,8 @@
         },
         "/api/matakuliah/{id}": {
             "delete":{
-                "description": "Delete Data",
+            "tags": ["matakuliah"],
+            "description": "Delete Data",
                 "parameters": [
                     {
                         "name": "id",
@@ -1241,7 +1288,8 @@
                 }
             },
             "put":{
-                "description": "Update Data Matakuliah",
+            "tags": ["matakuliah"],
+            "description": "Update Data Matakuliah",
                 "requestBody": {
                     "description": "Updated Matakuliah data",
                     "required": true,
@@ -1323,7 +1371,8 @@
         },
         "/api/matakuliah-mahasiswa": {
             "get":{
-                "description": "Get All Data Mahasiswa From Matakuliah",
+            "tags": ["matakuliah"],
+            "description": "Get All Data Mahasiswa From Matakuliah",
                 "parameters": [
 
                     {
@@ -1388,7 +1437,8 @@
                 }
             },
             "post": {
-            "description": "Create Matakuliah Data",
+                "tags": ["matakuliah"],
+                "description": "Create Matakuliah Data",
             "requestBody":{
                 "required": true,
                 "content": {
@@ -1457,7 +1507,8 @@
         },
         "/api/matakuliah-mahasiswa/{id}": {
             "delete":{
-                "description": "Delete Data",
+            "tags": ["matakuliah"],
+            "description": "Delete Data",
                 "parameters": [
                     {
                         "name": "id",
@@ -1500,7 +1551,8 @@
                 }
             },
             "put":{
-                "description": "Update Data Matakuliah",
+            "tags": ["matakuliah"],
+            "description": "Update Data Matakuliah",
                 "requestBody": {
                     "description": "Updated Matakuliah data",
                     "required": true,
@@ -1576,5 +1628,222 @@
             }
         }
 
-    }
-  }
+    },
+    "components": {
+        "schemas": {
+            "Mahasiswa": {
+                "type": "object",
+                "properties": {
+                  "nim": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Unique identifier for the student",
+                    "example": [123456]
+                  },
+                  "nama": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Name of the student",
+                    "nullable": false,
+                    "example": "John Doe"
+                  },
+                  "kontak": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Contact number of the student",
+                    "nullable": false,
+                    "example": 1234567890
+                  },
+                  "email": {
+                    "type": "string",
+                    "maxLength": 70,
+                    "description": "Email address of the student",
+                    "uniqueItems": true,
+                    "nullable": false,
+                    "example": "john.doe@example.com"
+                  },
+                  "alamat": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Address of the student",
+                    "nullable": true,
+                    "example": "123 Main Street, City"
+                  },
+                  "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the student record was created"
+                  },
+                  "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the student record was last updated"
+                  }
+                }
+              },
+              "Dosen": {
+                "type": "object",
+                "properties": {
+                  "nim": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Unique identifier for the lecturer",
+                    "example": 123456
+                  },
+                  "nama": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Name of the lecturer",
+                    "nullable": false,
+                    "example": "Jane Doe"
+                  },
+                  "kontak": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Contact number of the lecturer",
+                    "nullable": false,
+                    "example": 987654321
+                  },
+                  "email": {
+                    "type": "string",
+                    "maxLength": 70,
+                    "description": "Email address of the lecturer",
+                    "uniqueItems": true,
+                    "nullable": false,
+                    "example": "jane.doe@example.com"
+                  },
+                  "bidang_studi": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Field of study of the lecturer",
+                    "nullable": false,
+                    "example": "Computer Science"
+                  },
+                  "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the lecturer record was created"
+                  },
+                  "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the lecturer record was last updated"
+                  }
+                }
+              },
+              "DosenPembimbing": {
+                "type": "object",
+                "properties": {
+                  "kode": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Unique identifier for the lecturer advisor relationship",
+                    "example": 1
+                  },
+                  "id_dosen": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "ID of the lecturer who acts as the advisor",
+                    "example": 123456
+                  },
+                  "id_mahasiswa": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "ID of the student who is advised by the lecturer",
+                    "example": 654321
+                  },
+                  "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the lecturer advisor relationship was created"
+                  },
+                  "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the lecturer advisor relationship was last updated"
+                  }
+                }
+              },
+              "Matakuliah": {
+                "type": "object",
+                "properties": {
+                  "kode": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Unique identifier for the course",
+                    "example": 1
+                  },
+                  "nama_matakuliah": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Name of the course",
+                    "nullable": false,
+                    "example": "Programming Fundamentals"
+                  },
+                  "daya_tampung": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Capacity of the course",
+                    "unsigned": true,
+                    "example": 50
+                  },
+                  "jadwal": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Schedule of the course",
+                    "example": "2024-04-10T09:00:00Z"
+                  },
+                  "id_dosen": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "ID of the lecturer who teaches the course",
+                    "example": 123456
+                  },
+                  "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the course record was created"
+                  },
+                  "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the course record was last updated"
+                  }
+                }
+              },
+              "MatakuliahMahasiswa": {
+                "type": "object",
+                "properties": {
+                  "kode": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Unique identifier for the relationship between course and student",
+                    "example": 1
+                  },
+                  "id_matakuliah": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "ID of the course",
+                    "example": 123456
+                  },
+                  "id_mahasiswa": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "ID of the student",
+                    "example": 654321
+                  },
+                  "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the relationship record was created"
+                  },
+                  "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the relationship record was last updated"
+                  }
+                }
+              }
+            }
+        }
+}
